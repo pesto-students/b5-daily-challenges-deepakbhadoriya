@@ -1,10 +1,11 @@
-const validateTriangle = (maxS, s1, s2) => maxS * maxS === s1 * s1 + s2 * s2;
+const validateTriangle = (maxSide, side1, side2) =>
+  maxSide * maxSide === side1 * side1 + side2 * side2;
 
-function isTriangle(a, b, c) {
-  const max = Math.max(a, b, c);
-  if (max === a) return validateTriangle(a, b, c);
-  else if (max === b) return validateTriangle(b, a, c);
-  else if (max === c) return validateTriangle(c, a, b);
+function isTriangle(side1, side2, side3) {
+  const max = Math.max(side1, side2, side3);
+  if (max === side1) return validateTriangle(side1, side2, side3);
+  else if (max === side2) return validateTriangle(side2, side1, side3);
+  else if (max === side3) return validateTriangle(side3, side1, side2);
   else return false;
 }
 export { isTriangle };
