@@ -26,10 +26,10 @@ describe('test filter', () => {
     expect(filter(human, ([key]) => key === 'eyes')).toStrictEqual({ eyes: 2 });
   });
   it('throws error on invalid parameters', () => {
-    expect(() => map(123)).toThrow();
-    expect(() => map(null)).toThrow();
-    expect(() => map([])).toThrow();
-    expect(() => map('a')).toThrow();
+    expect(() => filter(123)).toThrow();
+    expect(() => filter(null)).toThrow();
+    expect(() => filter([])).toThrow();
+    expect(() => filter('a')).toThrow();
   });
 });
 
@@ -42,10 +42,10 @@ describe('test invert', () => {
     });
   });
   it('throws error on invalid parameters', () => {
-    expect(() => map(123)).toThrow();
-    expect(() => map(null)).toThrow();
-    expect(() => map([])).toThrow();
-    expect(() => map('a')).toThrow();
+    expect(() => invert(123)).toThrow();
+    expect(() => invert(null)).toThrow();
+    expect(() => invert([])).toThrow();
+    expect(() => invert('a')).toThrow();
   });
 });
 
@@ -62,10 +62,10 @@ describe('test merge', () => {
     });
   });
   it('throws error on invalid parameters', () => {
-    expect(() => map(123)).toThrow();
-    expect(() => map(null)).toThrow();
-    expect(() => map([])).toThrow();
-    expect(() => map('a')).toThrow();
+    expect(() => merge(123)).toThrow();
+    expect(() => merge(null)).toThrow();
+    expect(() => merge([])).toThrow();
+    expect(() => merge('a')).toThrow();
   });
 });
 
@@ -77,10 +77,10 @@ describe('test all', () => {
     expect(all(human, ([, value]) => value > 4)).toBeFalsy();
   });
   it('throws error on invalid parameters', () => {
-    expect(() => map(123)).toThrow();
-    expect(() => map(null)).toThrow();
-    expect(() => map([])).toThrow();
-    expect(() => map('a')).toThrow();
+    expect(() => all(123)).toThrow();
+    expect(() => all(null)).toThrow();
+    expect(() => all([])).toThrow();
+    expect(() => all('a')).toThrow();
   });
 });
 
@@ -92,9 +92,9 @@ describe('test some', () => {
     expect(some(human, ([, value]) => value === 10)).toBeFalsy();
   });
   it('throws error on invalid parameters', () => {
-    expect(() => map(123)).toThrow();
-    expect(() => map(null)).toThrow();
-    expect(() => map([])).toThrow();
-    expect(() => map('a')).toThrow();
+    expect(() => some(123)).toThrow();
+    expect(() => some(null)).toThrow();
+    expect(() => some([])).toThrow();
+    expect(() => some('a')).toThrow();
   });
 });
