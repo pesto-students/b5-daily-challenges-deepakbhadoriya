@@ -12,20 +12,20 @@ const arrayToObject = (arr) => Object.fromEntries(arr);
 
 const map = (obj, callBackFn) => {
   errorCheck(obj);
-  const resultObj = objectToArray(obj).map((item) => callBackFn(item));
-  return arrayToObject(resultObj);
+  const resultArr = objectToArray(obj).map((item) => callBackFn(item));
+  return arrayToObject(resultArr);
 };
 
 const filter = (obj, callBackFn) => {
   errorCheck(obj);
-  const resultObj = objectToArray(obj).filter((item) => callBackFn(item));
-  return arrayToObject(resultObj);
+  const resultArr = objectToArray(obj).filter((item) => callBackFn(item));
+  return arrayToObject(resultArr);
 };
 
 const invert = (obj) => {
   errorCheck(obj);
-  const resultObj = objectToArray(obj).map((item) => item.reverse(item));
-  return arrayToObject(resultObj);
+  const resultArr = objectToArray(obj).map((item) => item.reverse(item));
+  return arrayToObject(resultArr);
 };
 
 const merge = (...params) => {
