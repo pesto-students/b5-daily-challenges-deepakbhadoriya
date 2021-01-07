@@ -1,3 +1,13 @@
+// ! code may break didn't consider many edge cases
+
+// ? 1 If Object has Array/function in value
+// ? 2 If user does a arithmetic operation in callBackFunction on string value
+// ? 3 if user want to access/modify - not iteratable for not modifiable key value
+
+// ? Thought of using TRY CATCH block to throw error in case of Error.
+// # Is it a good approach @ ARFAT
+
+
 const errorCheck = (obj) => {
   if (obj === null) throw new Error('received NULL -- expecting OBJECT ')
   if (typeof obj !== 'object') throw new Error(`received ${typeof obj} -- expecting OBJECT `);
