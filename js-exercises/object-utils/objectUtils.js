@@ -5,10 +5,10 @@
 // ? 3 if user want to access/modify - not iteratable for not modifiable key value
 
 // ? Thought of using TRY CATCH block to throw error in case of Error.
-// # Is it a good approach @ ARFAT
+//  Is it a good approach @ ARFAT
 
 
-const errorCheck = (obj) => {
+const throwError = (obj) => {
   if (obj === null) throw new Error('received NULL -- expecting OBJECT ')
   if (typeof obj !== 'object') throw new Error(`received ${typeof obj} -- expecting OBJECT `);
   if (Array.isArray(obj)) throw new Error('received ARRAY -- expecting OBJECT ');
@@ -21,19 +21,19 @@ const arrayToObject = (arr) => Object.fromEntries(arr);
 // your implementation
 
 const map = (obj, callBackFn) => {
-  errorCheck(obj);
+  throwError(obj);
   const resultArr = objectToArray(obj).map((item) => callBackFn(item));
   return arrayToObject(resultArr);
 };
 
 const filter = (obj, callBackFn) => {
-  errorCheck(obj);
+  throwError(obj);
   const resultArr = objectToArray(obj).filter((item) => callBackFn(item));
   return arrayToObject(resultArr);
 };
 
 const invert = (obj) => {
-  errorCheck(obj);
+  throwError(obj);
   const resultArr = objectToArray(obj).map((item) => item.reverse(item));
   return arrayToObject(resultArr);
 };
@@ -41,19 +41,19 @@ const invert = (obj) => {
 const merge = (...params) => {
   let resultObj = {};
   for (const obj of params) {
-    errorCheck(obj);
+    throwError(obj);
     resultObj = { ...resultObj, ...obj };
   }
   return resultObj;
 };
 
 const all = (obj, callBackFn) => {
-  errorCheck(obj);
+  throwError(obj);
   return objectToArray(obj).every((item) => callBackFn(item));
 };
 
 const some = (obj, callBackFn) => {
-  errorCheck(obj);
+  throwError(obj);
   return objectToArray(obj).some((item) => callBackFn(item));
 };
 export { map, filter, invert, merge, all, some };
