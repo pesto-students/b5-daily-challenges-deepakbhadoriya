@@ -25,21 +25,13 @@ function* cycle(iter, noOfTime) {
   if (noOfTime) iteration = noOfTime;
 
   while (iteration) {
-    for (const el of iter) {
-      yield el;
-    }
+    yield* iter;
     if (typeof iteration === 'number') iteration -= 1;
   }
 }
 
 function* repeat(value, noOfTime) {
-  ifNotNumThrowError(noOfTime);
-  let iteration = true;
-  if (noOfTime) iteration = noOfTime;
-  while (iteration) {
-    yield value;
-    if (typeof iteration === 'number') iteration -= 1;
-  }
+  yield* cycle([value], noOfTime);
 }
 
 export { count, cycle, repeat };
